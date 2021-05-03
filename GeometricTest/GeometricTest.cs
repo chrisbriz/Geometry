@@ -156,11 +156,11 @@ namespace GeometricTest
         }
 
         [TestMethod()]
-        [DataRow(-14)]
-        public void NegativeValuePerimeterSquare(float a)
+        [DataRow(-14, 7)]
+        public void NegativeValueSideTest(float a, float b)
         {
-            IShape square = new Square(a);
-            Assert.IsTrue(geo.GetPerimeter(square) > 0, "Perimeter cannot be negative or 0");
+            IShape rectangle = new Rectangle(a, b);
+            Assert.IsFalse(rectangle.Height < 0, "Shape sides cannot have negative values");
         }
         #endregion
     }

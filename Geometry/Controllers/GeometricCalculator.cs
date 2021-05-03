@@ -57,7 +57,7 @@ namespace Geometry.Controllers
             try
             {
                 float perimeter = 0;
-                if (shape.GetType() == typeof(Rectangle) && shape.Height > 0)
+                if (shape.GetType() == typeof(Rectangle) && shape.Height > 0 && shape.ShapeBase > 0)
                 {
                     perimeter = 2 * shape.Height + 2 * shape.ShapeBase;
                 }
@@ -65,7 +65,7 @@ namespace Geometry.Controllers
                 {
                     perimeter = 4 * shape.Height;
                 }
-                else if (shape.GetType() == typeof(Triangle) && shape.Height > 0)
+                else if (shape.GetType() == typeof(Triangle) && shape.Height > 0 && shape.ShapeBase > 0)
                 {
                     var halfBase = shape.ShapeBase / 2;
                     var longSide = (float)Math.Sqrt(Math.Pow(shape.Height, 2) + Math.Pow(halfBase, 2));
